@@ -13,29 +13,29 @@ class ControleCliente
     public function cadastrar()
     {
         $dados = json_decode(file_get_contents("php://input"), true);
-        $usuario = new Cliente();
-        $usuario->inserir($dados['nome'], $dados['descricao'], $dados['idade']);
-        echo json_encode(["mensagem" => "Usuário cadastrado com sucesso"]);
+        $cliente = new Cliente();
+        $cliente->inserir($dados['nome'], $dados['profissao'], $dados['idade']);
+        echo json_encode(["mensagem" => "Cliente cadastrado com sucesso"]);
     }
 
     public function listar()
     {
-        $usuario = new Cliente();
-        echo json_encode($usuario->listar());
+        $cliente = new Cliente();
+        echo json_encode($cliente->listar());
     }
 
     public function alterar($id)
     {
         $dados = json_decode(file_get_contents("php://input"), true);
-        $usuario = new Cliente();
-        $usuario->alterar($dados['nome'], $dados['descricao'], $dados['idade']);
-        echo json_encode(["mensagem" => "Usuário alterado com sucesso"]);
+        $cliente = new Cliente();
+        $cliente->alterar($dados['nome'], $dados['profissao'], $dados['idade']);
+        echo json_encode(["mensagem" => "Cliente alterado com sucesso"]);
     }
 
     public function deletar($id)
     {
-        $usuario = new Cliente();
-        $usuario->deletar($id);
-        echo json_encode(["mensagem" => "Usuário deletado com sucesso"]);
+        $cliente = new Cliente();
+        $cliente->deletar($id);
+        echo json_encode(["mensagem" => "Cliente deletado com sucesso"]);
     }
 }
