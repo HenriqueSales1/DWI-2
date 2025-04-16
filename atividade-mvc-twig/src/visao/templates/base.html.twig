@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  {% set home = 'http://localhost/atividade-mvc-twig' %}
+  <body>
+    <header>
+      {% block header %} {% include "componentes/navigation.html.twig" %} {%
+      endblock %}
+    </header>
+
+    <main>
+      {% block principal %}
+      <p>Exemplo</p>
+      {% endblock %}
+    </main>
+    <footer>
+      <p>&copy; Henrique Sales 2025</p>
+    </footer>
+  </body>
+</html>
