@@ -6,7 +6,7 @@
 
 		<input type="hidden" name="id" value="{{ $mercearia->id ?? ''}}">
 
-		<div>
+		<br>
 			<label for="nome">Nome:</label><br>
 			<input type="text" id="nome" name="nome" value="{{ $mercearia->nome ?? '' }}" required><br>
 		</div>
@@ -17,17 +17,17 @@
 		</div>
 
 		<div>
-			<label for="unidade">Unidade:</label>
+			<label for="unidade">Unidade:</label><br>
 			<input type="text" id="unidade" name="unidade" value="{{ $mercearia->unidade ?? '' }}" required><br>
 		</div>
 
 		<div>
-			<label for="quantidade">Quantidade:</label>
+			<label for="quantidade">Quantidade:</label><br>
 			<input type="number" id="quantidade" name="quantidade" value="{{ $mercearia->quantidade ?? '' }}" required><br>
 		</div>
 
 		<div>
-			<label for="descricao">Descrição:</label>
+			<label for="descricao">Descrição:</label><br>
 			<textarea id="descricao" name="descricao" value="{{ $mercearia->descricao ?? '' }}" required></textarea><br>
 		</div>
 
