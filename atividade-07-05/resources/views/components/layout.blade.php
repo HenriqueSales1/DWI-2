@@ -10,7 +10,7 @@
     <header>
         <h1>Mercearia Laravel</h1>
         @include ('components.menu')
-        <h3>{{ $nome }}</h3>
+        <h3>{{ $titulo }}</h3>
     </header>
     <main>
         {{ $slot }}

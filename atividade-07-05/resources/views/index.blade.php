@@ -1,4 +1,4 @@
 <x-layout>
-    <x-slot:nome>Página inicial</x-slot:nome>
+    <x-slot:titulo>Página inicial</x-slot:titulo>
     <p>Bem vindo.</p>
 </x-layout>

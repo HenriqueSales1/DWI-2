@@ -1,5 +1,5 @@
 <x-layout>
-	<x-slot:nome>Novo produto</x-slot:nome>
+	<x-slot:titulo>Novo Produto</x-slot:titulo>
 	<form method="POST" action="/mercearias/{{ isset($mercearia) ? 'atualizar' : 'armazenar' }}">
         
 		@csrf

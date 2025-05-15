@@ -1,5 +1,5 @@
 <x-layout>
-	<x-slot:nome>Mercearia</x-slot:nome>
+	<x-slot:titulo>Lista de Produtos</x-slot:titulo>
 	@session('success')
         {{ session('success') }}
     @endsession
