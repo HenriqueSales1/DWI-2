@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MerceariaController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\CadastroController;
 
 Route::get('/', function () {
     return view('index');
@@ -11,6 +12,8 @@ Route::get('/', function () {
 Route::get('/login', [LoginController::class, 'digitarLogin'])->name('login');
 Route::post('/login', [LoginController::class,'login']);
 Route::get('/logout', [LoginController::class,'logout']);
+Route::get('/cadastro', [CadastroController::class, 'cadastrar'])->name('cadastro');
+route::post('/cadastro', [CadastroController::class, 'atualizaCadastro']);
 
 Route::get('/mercearias', [MerceariaController::class, 'exibirProdutos'])->middleware('auth');
 Route::get('/mercearias/adicionar', [MerceariaController::class, 'adicionarProduto'])->middleware('auth');

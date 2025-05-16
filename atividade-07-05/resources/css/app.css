@@ -13,19 +13,22 @@ body {
 
 nav {
     background-color: #333;
-    padding: 10px;
+    padding: 10px 20px;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
     color: #ffffff;
     text-decoration: none;
-    margin: 0 15px;
+    margin: 0 10px;
     font-size: 1.2em;
     transition: color 0.3s;
 }
@@ -50,8 +53,9 @@ h1 {
 }
 
 h2 {
-    font-size: 2em;
-    margin-bottom: 15px;
+    /* font-size: 2em; */
+    margin: 0;
+    padding: 0;
 }
 
 h3 {
@@ -132,4 +136,64 @@ footer {
     width: 100%;
     text-align: center;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.5);
+}
+
+label {
+    font-size: 1.2em;
+    margin-bottom: 1px;
+    display: block;
+    text-align: center;
+    color: #f7f7f7;
+}
+
+#mercearia-menu{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    align-items: flex-start;
+    padding-left: 20px;
+}
+
+#mercearia-login{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: left; */
+    align-items: flex-end;
+    padding-right: 20px;
+    margin-right: 20px;
+}
+
+#mercearia-menu h2{
+    padding: 0;
+    font-size: 4rem;
+    color: #ffcc00;
+}
+
+#mercearia-login h2{
+    padding: 0;
+    font-size: 4rem;
+    color: #ffcc00;
+}
+
+#mercearia-menu ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+#mercearia-menu li{
+    display: block;
+    /* margin: 5px 0; */
+}
+
+#mercearia-login ul{
+    list-style: none;
+    padding: 0;
+    margin-top: 10px;
+}
+
+#mercearia-menu li{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    /* margin: 5px 0; */
 }
