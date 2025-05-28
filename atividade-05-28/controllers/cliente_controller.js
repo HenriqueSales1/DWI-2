@@ -5,6 +5,8 @@ async function criarCliente(req, res) {
     nome: req.body.nome,
     email: req.body.email,
     telefone: req.body.telefone,
+    endereco: req.body.endereco,
+    data_nascimento: req.body.data_nascimento
   });
   res.json(cliente);
 }
@@ -24,6 +26,8 @@ async function editarCliente(req, res) {
     cliente.nome = req.body.nome;
     cliente.email = req.body.email;
     cliente.telefone = req.body.telefone;
+    cliente.endereco = req.body.endereco;
+    cliente.data_nascimento = req.body.data_nascimento;
     if (await cliente.save()) {
       res.json(cliente);
     } else {
