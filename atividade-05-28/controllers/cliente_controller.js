@@ -1,4 +1,5 @@
 import Cliente from "../models/cliente.js";
+import Film from "../models/film.js";
 
 async function criarCliente(req, res) {
   const cliente = await Cliente.create({
@@ -6,13 +7,13 @@ async function criarCliente(req, res) {
     email: req.body.email,
     telefone: req.body.telefone,
     endereco: req.body.endereco,
-    data_nascimento: req.body.data_nascimento
+    data_nascimento: req.body.data_nascimento,
   });
   res.json(cliente);
 }
 
 async function listarClientes(req, res) {
-  const clientes = await Cliente.findAll();
+  const clientes = await Cliente.findAll({include: Film});
   res.json(clientes);
 }
 

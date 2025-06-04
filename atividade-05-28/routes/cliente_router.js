@@ -1,4 +1,9 @@
-import { criarCliente, listarClientes, editarCliente, excluirCliente } from "../controllers/cliente_controller.js";
+import {
+  criarCliente,
+  listarClientes,
+  editarCliente,
+  excluirCliente,
+} from "../controllers/cliente_controller.js";
 import { Router } from "express";
 
 const clienteRouter = Router();

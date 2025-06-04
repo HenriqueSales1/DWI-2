@@ -1,4 +1,9 @@
-import { criarFilme, editarFilme, excluirFilme, listarFilmes } from "../controllers/film_controller.js";
+import {
+  criarFilme,
+  editarFilme,
+  excluirFilme,
+  listarFilmes,
+} from "../controllers/film_controller.js";
 import { Router } from "express";
 
 const filmRouter = Router();
