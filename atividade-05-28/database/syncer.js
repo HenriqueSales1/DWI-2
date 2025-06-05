@@ -1,19 +1,19 @@
 import Cliente from "../models/cliente.js";
 import Film from "../models/film.js";
-import Director from "../models/director.js";
+import Dependente from "../models/dependente.js";
+import Game from "../models/game.js";
 import sequelize from "../database/mysql.js";
+// import { Model } from "sequelize";
 
 async function syncer() {
   try {
     await sequelize.authenticate();
 
-    Film.belongsTo(Director);
-    Director.hasMany(Film);
-
+    Cliente.hasMany(Dependente);
     Film.belongsTo(Cliente);
+    Game.belongsTo(Cliente);
     Cliente.hasMany(Film);
-
-    // Film.belongsToMany(Cliente, { through: "ClienteFilm" });
+    Dependente.belongsTo(Cliente);
 
     await sequelize.sync(); // Use { force: true } to drop and recreate tables
   } catch (error) {

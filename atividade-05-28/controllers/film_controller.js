@@ -1,29 +1,22 @@
 import Film from "../models/film.js";
-import Cliente from "../models/cliente.js";
-import Director from "../models/director.js";
+// import Cliente from "../models/cliente.js";
+// import Dependente from "../models/dependente.js";
 
 async function criarFilme(req, res) {
-  // const clientes = [];
-  // for (let i = 0; i < req.body.clientes.length; i++) {
-  //   const cliente = await Cliente.findByPk(req.body.clientes[i]);
-  //   clientes.push(cliente);
-  // }
   console.log(req.body);
   const film = await Film.create({
     titulo: req.body.titulo,
     descricao: req.body.descricao,
     ano: req.body.ano,
-    DirectorId: req.body.directorId,
+    DependenteId: req.body.dependenteId,
     ClienteId: req.body.clienteId
   });
-
-  // await film.addClientes(clientes);
   res.json(film);
 }
 
 async function listarFilmes(req, res) {
   try {
-    const filmes = await Film.findAll(/* {include : [Cliente, Director]} */);
+    const filmes = await Film.findAll(/* {include : [Cliente, Dependente]} */);
     res.json(filmes);
   } catch (error) {
     res.json({ error: "Erro ao listar filmes" });
