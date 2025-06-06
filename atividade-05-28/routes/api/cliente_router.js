@@ -3,7 +3,7 @@ import {
   listarClientes,
   editarCliente,
   excluirCliente,
-} from "../controllers/cliente_controller.js";
+} from "../../controllers/api/cliente_controller.js";
 import { Router } from "express";
 
 const clienteRouter = Router();

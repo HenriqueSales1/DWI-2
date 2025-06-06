@@ -1,5 +1,5 @@
-import Cliente from "../models/cliente.js";
-import Film from "../models/film.js";
+import Cliente from "../../models/cliente.js";
+import Film from "../../models/film.js";
 
 async function criarCliente(req, res) {
   const cliente = await Cliente.create({

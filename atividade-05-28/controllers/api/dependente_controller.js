@@ -1,6 +1,6 @@
-import Dependente from "../models/dependente.js";
-import Film from "../models/film.js";
-import Cliente from "../models/cliente.js";
+import Dependente from "../../models/dependente.js";
+import Film from "../../models/film.js";
+import Cliente from "../../models/cliente.js";
 
 async function createDependente(req, res) {
   const dependente = await Dependente.create({

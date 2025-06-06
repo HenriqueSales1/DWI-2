@@ -3,7 +3,7 @@ import {
     listDependentes,
     editDependente,
     deleteDependente
-} from "../controllers/dependente_controller.js";
+} from "../../controllers/api/dependente_controller.js";
 import { Router } from "express";
 
 const dependenteRouter = Router();

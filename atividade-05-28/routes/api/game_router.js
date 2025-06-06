@@ -3,7 +3,7 @@ import {
     listGames,
     editGame,
     deleteGame
-} from "../controllers/game_controller.js";
+} from "../../controllers/api/game_controller.js";
 import { Router } from "express";
 
 const gameRouter = Router();
