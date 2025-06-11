@@ -2,9 +2,9 @@ import express from "express";
 import {create} from "express-handlebars";
 
 import film_web_router from "./routes/web/film_router.js";
-import clienteRouter from "./routes/api/cliente_router.js";
-import dependenteRouter from "./routes/api/dependente_router.js";
-import gameRouter from "./routes/api/game_router.js";
+import cliente_web_router from "./routes/web/cliente_router.js";
+import dependente_web_router from "./routes/web/dependente_router.js";
+import game_web_router from "./routes/web/game_router.js";
 import syncer from "./database/syncer.js";
 
 if (!await syncer()) {
@@ -31,9 +31,9 @@ app.get("/", (req, res) => {
 });
 
 app.use("/films", film_web_router);
-app.use("/clientes", clienteRouter);
-app.use("/dependentes", dependenteRouter);
-app.use("/games", gameRouter);
+app.use("/clientes", cliente_web_router);
+app.use("/dependentes", dependente_web_router);
+app.use("/games", game_web_router);
 
 app.listen(80, () => {
   console.log("Servidor rodando na porta 80");

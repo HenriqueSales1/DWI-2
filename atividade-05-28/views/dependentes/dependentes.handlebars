@@ -1,0 +1,55 @@
+<h1>Dependentes</h1>
+
+<form action="/dependentes/{{#if action}}save{{else}}create{{/if}}" method="post">
+    <input type="hidden" name="id" value="{{dependente_editing.id}}">
+
+    <label for="nome">Nome</label>
+    <br>
+    <input type="text" name="nome" id="nome" value="{{dependente_editing.nome}}" required>
+    <br>
+
+    <label for="email">Email</label>
+    <br>
+    <input type="email" name="email" id="email" value="{{dependente_editing.email}}" required>
+    <br>
+
+    <label for="ClienteId">ID do Cliente</label>
+    <br>
+    <input type="number" name="ClienteId" id="ClienteId" value="{{dependente_editing.ClienteId}}" required>
+    <br>
+
+    <button>
+        {{#if action}} Editar {{else}} Salvar {{/if}}
+    </button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID do Dependente</th>
+            <th>Nome</th>
+            <th>Email</th>
+            <th>ID do Cliente</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each dependentes}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.nome}}</td>
+                <td>{{this.email}}</td>
+                <td>{{this.ClienteId}}</td>
+                <td style="display:flex; justify-content: space-evenly;">
+                    <form action="/dependentes/edit" method="post">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <button type="submit">Editar</button>
+                    </form>
+                    <form action="/dependentes/delete" method="post">
+                        <input type="hidden" name="id" value="{{this.id}}">
+                        <button type="submit">Excluir</button>
+                    </form>
+                </td>
+            </tr>
+        {{/each}}
+</table>
