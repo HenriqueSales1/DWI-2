@@ -9,5 +9,11 @@
     <li><a href="/games">Games</a></li>
     <li><a href="/clientes">Clientes</a></li>
     <li><a href="/dependentes">Dependentes</a></li>
+    {{#if user}}
+    <li><a href="/users/logout">Sair</a></li>
+    {{else}}
+    <li><a href="/users/login">Entrar</a></li>
+    <li><a href="/users/register">Registrar</a></li>
+    {{/if}}
   </ul>
 </nav>
