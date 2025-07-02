@@ -42,9 +42,9 @@ const App = () => {
 
             <hr />
 
-            {/* <ThemeContext.Provider value="dark"> */}
+            <ThemeContext.Provider value={theme}>
                 <Table titles={titles} data={clients} />
-            {/* </ThemeContext.Provider> */}
+            </ThemeContext.Provider>
         </div>
     );
 };

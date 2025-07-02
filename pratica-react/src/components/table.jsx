@@ -22,9 +22,9 @@ const Table = ({ titles, data }) => {
             (obj, index) => {
               return (
                 <tr>
-                  <td>{obj.id}</td>;
-                  <td>{obj.name}</td>;
-                  <td>{obj.age}</td>;
+                  <td>{obj.id}</td>
+                  <td>{obj.name}</td>
+                  <td>{obj.age}</td>
                 </tr>
               );
             }
