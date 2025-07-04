@@ -25,6 +25,9 @@ const Select = () => {
     }, [uf]);
     return (
         <div className={`theme-${theme}`}>
+            <h3>
+                Seleção de Municípios
+            </h3>
             <form onSubmit={addUf}>
                 <label htmlFor="">UF: </label>
                 <input ref={inUf} />

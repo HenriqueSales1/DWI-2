@@ -40,7 +40,7 @@ const App = () => {
             <hr />
 
             <ThemeContext.Provider value={theme}>
-                <h3>Seleção de Municípios</h3>
+                {/* <h3>Seleção de Municípios</h3> */}
                 <Select />
             </ThemeContext.Provider>
 
