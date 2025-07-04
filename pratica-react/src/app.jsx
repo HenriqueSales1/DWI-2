@@ -27,18 +27,22 @@ const App = () => {
     return (
         <div>
             <ChangeTheme theme={theme} setTheme={setTheme} />
-            
-            <h3>Felinos</h3>
-            <form onSubmit={addFelino}>
-                <input type="text" ref={inFelino} placeholder="Digite o nome do felino" />
-                <button type="submit">Adicionar</button>
-            </form>
-            <List items={felinos} />
+
+            <ThemeContext.Provider value={theme}>
+                <h3>Felinos</h3>
+                <form onSubmit={addFelino}>
+                    <input type="text" ref={inFelino} placeholder="Digite o nome do felino" />
+                    <button type="submit">Adicionar</button>
+                </form>
+                <List items={felinos} />
+            </ThemeContext.Provider>
 
             <hr />
 
-            <h3>Seleção de Municípios</h3>
-            <Select />
+            <ThemeContext.Provider value={theme}>
+                <h3>Seleção de Municípios</h3>
+                <Select />
+            </ThemeContext.Provider>
 
             <hr />
 

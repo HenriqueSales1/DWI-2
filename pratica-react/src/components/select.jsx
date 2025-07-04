@@ -1,29 +1,30 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useContext } from 'react';
+import ThemeContext from '../context/theme';
 
 const Select = () => {
+    const theme = useContext(ThemeContext);
     const [municipios, setMunicipios] = useState([]);
     const [uf, setUf] = useState('');
     const inUf = useRef(null);
-
-
+    
+    
     const addUf = (e) => {
         e.preventDefault();
         setUf(inUf.current.value);
     };
-
-
+    
+    
     useEffect(() => {
         fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${uf}/municipios`)
-            .then((res) => {
-                return res.json();
-            })
-            .then((json) => {
-                setMunicipios(json);
-            })
+        .then((res) => {
+            return res.json();
+        })
+        .then((json) => {
+            setMunicipios(json);
+        })
     }, [uf]);
-
     return (
-        <div>
+        <div className={`theme-${theme}`}>
             <form onSubmit={addUf}>
                 <label htmlFor="">UF: </label>
                 <input ref={inUf} />
