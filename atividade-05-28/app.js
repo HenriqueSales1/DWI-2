@@ -2,21 +2,30 @@ import express from "express";
 import { create } from "express-handlebars";
 import session from "express-session";
 import css from "connect-session-sequelize";
+import cors from "cors";
 
 import film_web_router from "./routes/web/film_router.js";
 import cliente_web_router from "./routes/web/cliente_router.js";
 import dependente_web_router from "./routes/web/dependente_router.js";
 import game_web_router from "./routes/web/game_router.js";
 import user_web_router from "./routes/web/user_router.js";
+
+import clienteRouter from "./routes/api/clienteRouter.js";
+
 import syncer from "./database/syncer.js";
 import sequelize from "./database/mysql.js";
-import { checkLogged } from "./controllers/web/user_controller.js";
+// import { checkLogged } from "./controllers/web/user_controller.js";
 
 if (!(await syncer())) {
   process.exit();
 }
 
 const app = express();
+
+app.use(cors({
+  allowOrigin: "*",
+  methods: "GET,PUT,POST,DELETE",
+}));
 
 const hbs = create({
   extname: ".handlebars",
@@ -77,6 +86,8 @@ app.use("/clientes", cliente_web_router);
 app.use("/dependentes", dependente_web_router);
 app.use("/games", game_web_router);
 app.use("/users", user_web_router);
+
+app.use("/api/clientes", clienteRouter);
 
 app.listen(80, () => {
   console.log("Servidor rodando na porta 80");
